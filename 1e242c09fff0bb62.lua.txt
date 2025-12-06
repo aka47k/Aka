@@ -1,0 +1,947 @@
+-- ts file was generated at discord.gg/25ms
+
+
+local vu1 = game:GetService("Players")
+local vu2 = game:GetService("RunService")
+game:GetService("StarterGui")
+local vu3 = game:GetService("UserInputService")
+local vu4 = vu1.LocalPlayer
+local vu5 = workspace.CurrentCamera
+local vu6 = false
+local vu7 = nil
+local vu8 = nil
+local vu9 = UDim2.new(0.5, - 100, 0.3, 0)
+local vu10 = false
+local vu11 = nil
+local v12 = vu4
+local vu13 = Instance.new("ScreenGui", vu4.WaitForChild(v12, "PlayerGui"))
+vu13.Name = "MainMenuUI"
+vu13.ResetOnSpawn = false
+local v14 = Instance.new("TextButton")
+v14.Size = UDim2.new(0, 80, 0, 30)
+v14.Position = UDim2.new(0, 10, 0, 10)
+v14.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+v14.TextColor3 = Color3.fromRGB(0, 255, 0)
+v14.Text = "Menu"
+v14.Font = Enum.Font.GothamBold
+v14.TextScaled = true
+v14.Parent = vu13
+v14.BorderSizePixel = 0
+v14.AutoButtonColor = false
+Instance.new("UICorner", v14).CornerRadius = UDim.new(0, 12)
+v14.Active = true
+v14.Draggable = true
+local vu15 = Instance.new("ScrollingFrame")
+vu15.Size = UDim2.new(0, 156, 0, 224)
+vu15.Position = UDim2.new(0, 10, 0, 60)
+vu15.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+vu15.Visible = false
+vu15.Parent = vu13
+vu15.BorderSizePixel = 0
+vu15.CanvasSize = UDim2.new(0, 10, 0, 100)
+vu15.ScrollBarThickness = 6
+Instance.new("UICorner", vu15).CornerRadius = UDim.new(0, 12)
+local vu16 = Instance.new("UIListLayout", vu15)
+vu16.Padding = UDim.new(0, 10)
+vu16.HorizontalAlignment = Enum.HorizontalAlignment.Center
+vu16.SortOrder = Enum.SortOrder.LayoutOrder
+local v17 = vu16
+vu16.GetPropertyChangedSignal(v17, "AbsoluteContentSize"):Connect(function()
+    vu15.CanvasSize = UDim2.new(0, 0, 0, vu16.AbsoluteContentSize.Y + 20)
+end)
+local function v22(p18, p19, p20)
+    local v21 = Instance.new("TextButton")
+    v21.Size = UDim2.new(0, 80, 0, 40)
+    v21.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    v21.TextColor3 = p19
+    v21.Text = p18
+    v21.Font = Enum.Font.GothamBold
+    v21.TextScaled = true
+    v21.BorderSizePixel = 0
+    v21.AutoButtonColor = false
+    v21.Parent = vu15
+    Instance.new("UICorner", v21).CornerRadius = UDim.new(0, 10)
+    if p20 then
+        v21.MouseButton1Click:Connect(p20)
+    end
+    return v21
+end
+local v23 = v22("CentuDox Camlock", Color3.fromRGB(170, 0, 255))
+v22("Redz HUB", Color3.fromRGB(255, 0, 0), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau"))({
+        JoinTeam = "Pirates",
+        Translator = true
+    })
+end)
+local vu24 = v22("Anti Stun OFF", Color3.fromRGB(0, 255, 255))
+local v25 = v22("Jump Hack", Color3.fromRGB(255, 105, 180))
+local vu26 = v22("Noclip OFF", Color3.fromRGB(255, 165, 0))
+local vu27 = v22("Fly OFF", Color3.fromRGB(0, 0, 139))
+local vu28 = v22("Aimbot skills OFF", Color3.fromRGB(0, 200, 200))
+local vu29 = v22("Kill Aura OFF", Color3.fromRGB(255, 50, 50))
+local vu30 = false
+vu29.MouseButton1Click:Connect(function()
+    vu30 = not vu30
+    if vu30 then
+        vu29.Text = "Kill Aura ON"
+        _G.KillAura = true
+        pcall(function()
+            loadstring(game:HttpGet("https://scriptprotector.vercel.app/api/raw/4354f2370b6276acc62f61d722dde95a", true))()
+        end)
+    else
+        vu29.Text = "Kill Aura OFF"
+        _G.KillAura = false
+        pcall(function()
+            loadstring(game:HttpGet("https://scriptprotector.vercel.app/api/raw/4354f2370b6276acc62f61d722dde95a", true))()
+        end)
+    end
+end)
+local vu31 = v22("ESP OFF", Color3.fromRGB(255, 50, 50))
+local vu32 = false
+vu31.MouseButton1Click:Connect(function()
+    vu32 = not vu32
+    if vu32 then
+        vu31.Text = "ESP ON"
+        _G.PlayerEsp = true
+    else
+        vu31.Text = "ESP OFF"
+        _G.PlayerEsp = false
+    end
+end)
+local vu33 = v22("Infinite Energy OFF", Color3.fromRGB(255, 255, 0))
+local vu34 = false
+vu33.MouseButton1Click:Connect(function()
+    vu34 = not vu34
+    if vu34 then
+        vu33.Text = "Infinite Energy ON"
+        _G.InfEnergy = true
+    else
+        vu33.Text = "Infinite Energy OFF"
+        _G.InfEnergy = false
+    end
+end)
+local vu35 = v22("Walk on Water OFF", Color3.fromRGB(0, 150, 255))
+local vu36 = false
+vu35.MouseButton1Click:Connect(function()
+    vu36 = not vu36
+    if vu36 then
+        vu35.Text = "Walk on Water ON"
+        vu35.TextColor3 = Color3.fromRGB(0, 255, 0)
+        _G.WalkOnWater = true
+    else
+        vu35.Text = "Walk on Water OFF"
+        vu35.TextColor3 = Color3.fromRGB(255, 50, 50)
+        _G.WalkOnWater = false
+    end
+end)
+local vu37 = v22("Auto Race V3 OFF", Color3.fromRGB(0, 255, 255))
+local vu38 = false
+vu37.MouseButton1Click:Connect(function()
+    vu38 = not vu38
+    if vu38 then
+        vu37.Text = "Auto Race V3 ON"
+        _G.AutoRaceV3 = true
+    else
+        vu37.Text = "Auto Race V3 OFF"
+        _G.AutoRaceV3 = false
+    end
+end)
+local vu39 = v22("Auto Race V4 OFF", Color3.fromRGB(255, 0, 255))
+local vu40 = false
+vu39.MouseButton1Click:Connect(function()
+    vu40 = not vu40
+    if vu40 then
+        vu39.Text = "Auto Race V4 ON"
+        _G.AutoRaceV4 = true
+    else
+        vu39.Text = "Auto Race V4 OFF"
+        _G.AutoRaceV4 = false
+    end
+end)
+v14.MouseButton1Click:Connect(function()
+    vu15.Visible = not vu15.Visible
+end)
+local function vu46()
+    vu11 = vu2.RenderStepped:Connect(function()
+        local v41 = vu4.Character
+        if v41 then
+            local v42 = v41:FindFirstChild("HumanoidRootPart")
+            local v43 = v41:FindFirstChildOfClass("Humanoid")
+            if v42 and v43 then
+                local v44 = v43.MoveDirection
+                if v44.Magnitude > 0 then
+                    local v45 = Vector3.new(v44.X, 0, v44.Z).Unit
+                    v42.CFrame = v42.CFrame + v45 * 1.2
+                end
+            end
+        end
+    end)
+end
+local function vu47()
+    if vu11 then
+        vu11:Disconnect()
+        vu11 = nil
+    end
+end
+vu24.MouseButton1Click:Connect(function()
+    vu10 = not vu10
+    if vu10 then
+        vu24.Text = "Anti Stun ON"
+        vu46()
+    else
+        vu24.Text = "Anti Stun OFF"
+        vu47()
+    end
+end)
+local function v58()
+    local v48 = Instance.new("ScreenGui", game:GetService("CoreGui"))
+    v48.Name = "JumpButtonGUI"
+    local vu49 = Instance.new("TextButton", v48)
+    vu49.Text = "Jump"
+    vu49.Size = UDim2.new(0, 110, 0, 44)
+    vu49.Position = UDim2.new(0, 20, 0.5, - 22)
+    vu49.BackgroundColor3 = Color3.fromRGB(30, 30, 35)
+    vu49.BackgroundTransparency = 0.3
+    vu49.TextColor3 = Color3.fromRGB(230, 230, 255)
+    vu49.Font = Enum.Font.GothamBold
+    vu49.TextSize = 22
+    vu49.BorderSizePixel = 0
+    vu49.Active = true
+    vu49.Draggable = true
+    Instance.new("UICorner", vu49).CornerRadius = UDim.new(0, 14)
+    local v50 = Instance.new("UIStroke", vu49)
+    v50.Color = Color3.fromRGB(0, 0, 139)
+    v50.Thickness = 3
+    v50.LineJoinMode = Enum.LineJoinMode.Round
+    local vu51 = 250
+    local vu52 = false
+    local vu53 = nil
+    local function v56()
+        if not vu52 then
+            vu52 = true
+            vu49.Text = "Jump ON"
+            local vu54 = (vu4.Character or vu4.CharacterAdded:Wait()):FindFirstChildOfClass("Humanoid")
+            if vu54 then
+                local vu55 = vu54.JumpPower
+                vu54.JumpPower = vu51
+                vu53 = vu2.Heartbeat:Connect(function()
+                    if vu54 and vu52 then
+                        vu54:ChangeState(Enum.HumanoidStateType.Jumping)
+                    end
+                end)
+                task.delay(0.5, function()
+                    if vu54 then
+                        vu54.JumpPower = vu55
+                    end
+                end)
+            end
+        end
+    end
+    local function v57()
+        vu52 = false
+        vu49.Text = "Jump"
+        if vu53 then
+            vu53:Disconnect()
+            vu53 = nil
+        end
+    end
+    vu49.MouseButton1Down:Connect(v56)
+    vu49.MouseButton1Up:Connect(v57)
+end
+v25.MouseButton1Click:Connect(v58)
+local function vu80()
+    if not vu13:FindFirstChild("CamLockUI") then
+        local vu59 = Instance.new("TextButton")
+        vu59.Name = "CamLockUI"
+        vu59.Size = UDim2.new(0, 200, 0, 50)
+        vu59.Position = vu9
+        vu59.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        vu59.TextColor3 = Color3.fromRGB(170, 0, 255)
+        vu59.TextScaled = true
+        vu59.Font = Enum.Font.GothamBold
+        vu59.Text = "CentuDox OFF"
+        vu59.Parent = vu13
+        vu59.BorderSizePixel = 0
+        vu59.AutoButtonColor = false
+        Instance.new("UICorner", vu59).CornerRadius = UDim.new(0, 12)
+        vu59.Active = true
+        vu59.Draggable = true
+        local vu60 = nil
+        local vu61 = nil
+        local vu62 = nil
+        local vu63 = nil
+        vu59.InputBegan:Connect(function(pu64)
+            if pu64.UserInputType == Enum.UserInputType.MouseButton1 or pu64.UserInputType == Enum.UserInputType.Touch then
+                vu60 = true
+                vu62 = pu64.Position
+                vu63 = vu59.Position
+                pu64.Changed:Connect(function()
+                    if pu64.UserInputState == Enum.UserInputState.End then
+                        vu60 = false
+                        vu9 = vu59.Position
+                    end
+                end)
+            end
+        end)
+        vu59.InputChanged:Connect(function(p65)
+            if p65.UserInputType == Enum.UserInputType.MouseMovement or p65.UserInputType == Enum.UserInputType.Touch then
+                vu61 = p65
+            end
+        end)
+        vu3.InputChanged:Connect(function(p66)
+            if p66 == vu61 and vu60 then
+                local v67 = p66.Position - vu62
+                vu59.Position = UDim2.new(vu63.X.Scale, vu63.X.Offset + v67.X, vu63.Y.Scale, vu63.Y.Offset + v67.Y)
+            end
+        end)
+        local function vu77()
+            local v68 = vu1
+            local v69, v70, v71 = ipairs(v68:GetPlayers())
+            local v72 = - 1
+            local v73 = nil
+            while true do
+                local v74
+                v71, v74 = v69(v70, v71)
+                if v71 == nil then
+                    break
+                end
+                if v74 ~= vu4 and v74.Character and v74.Character:FindFirstChild("HumanoidRootPart") then
+                    local v75 = (v74.Character.HumanoidRootPart.Position - vu5.CFrame.Position).Unit
+                    local v76 = vu5.CFrame.LookVector:Dot(v75)
+                    if v72 < v76 then
+                        v73 = v74
+                        v72 = v76
+                    end
+                end
+            end
+            return v73
+        end
+        local function vu78()
+            vu7 = vu77()
+            if vu7 then
+                vu8 = vu2.RenderStepped:Connect(function()
+                    if vu7 and vu7.Character and vu7.Character:FindFirstChild("HumanoidRootPart") then
+                        vu5.CFrame = CFrame.new(vu5.CFrame.Position, vu7.Character.HumanoidRootPart.Position)
+                    end
+                end)
+            end
+        end
+        local function vu79()
+            if vu8 then
+                vu8:Disconnect()
+                vu8 = nil
+            end
+            vu7 = nil
+        end
+        vu59.MouseButton1Click:Connect(function()
+            vu6 = not vu6
+            if vu6 then
+                vu59.Text = "CentuDox ON"
+                vu78()
+            else
+                vu59.Text = "CentuDox OFF"
+                vu79()
+            end
+        end)
+    end
+end
+v23.MouseButton1Click:Connect(vu80)
+local vu81 = false
+local vu82 = nil
+local function vu88()
+    vu82 = vu2.Stepped:Connect(function()
+        local v83 = vu4.Character
+        if v83 then
+            local v84, v85, v86 = pairs(v83:GetChildren())
+            while true do
+                local v87
+                v86, v87 = v84(v85, v86)
+                if v86 == nil then
+                    break
+                end
+                if v87:IsA("BasePart") then
+                    v87.CanCollide = false
+                end
+            end
+        end
+    end)
+end
+local function vu94()
+    if vu82 then
+        vu82:Disconnect()
+    end
+    local v89 = vu4.Character
+    if v89 then
+        local v90, v91, v92 = pairs(v89:GetChildren())
+        while true do
+            local v93
+            v92, v93 = v90(v91, v92)
+            if v92 == nil then
+                break
+            end
+            if v93:IsA("BasePart") then
+                v93.CanCollide = true
+            end
+        end
+    end
+end
+vu26.MouseButton1Click:Connect(function()
+    vu81 = not vu81
+    vu26.Text = vu81 and "Noclip ON" or "Noclip OFF"
+    if vu81 then
+        vu88()
+    else
+        vu94()
+    end
+end)
+local vu95 = false
+local vu96 = nil
+local function vu103()
+    local v97 = vu4.Character or vu4.CharacterAdded:Wait()
+    local v98 = v97:WaitForChild("HumanoidRootPart")
+    local vu99 = v97:WaitForChild("Humanoid")
+    if v98:FindFirstChild("FlyVelocity") then
+        v98.FlyVelocity:Destroy()
+    end
+    if v98:FindFirstChild("FlyGyro") then
+        v98.FlyGyro:Destroy()
+    end
+    local vu100 = Instance.new("BodyVelocity")
+    vu100.Name = "FlyVelocity"
+    vu100.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+    vu100.P = 12500
+    vu100.Velocity = Vector3.new(0, 0, 0)
+    vu100.Parent = v98
+    local vu101 = Instance.new("BodyGyro")
+    vu101.Name = "FlyGyro"
+    vu101.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
+    vu101.P = 10000
+    vu101.CFrame = v98.CFrame
+    vu101.Parent = v98
+    vu99:ChangeState(Enum.HumanoidStateType.Physics)
+    vu96 = vu2.RenderStepped:Connect(function()
+        local v102 = workspace.CurrentCamera
+        vu101.CFrame = v102.CFrame
+        if vu99.MoveDirection.Magnitude <= 0.01 then
+            vu100.Velocity = Vector3.new(0, 0, 0)
+        else
+            vu100.Velocity = v102.CFrame.LookVector * 55
+        end
+    end)
+end
+local function vu107()
+    local v104 = vu4.Character
+    if v104 then
+        local v105 = v104:FindFirstChild("HumanoidRootPart")
+        local v106 = v104:FindFirstChild("Humanoid")
+        if v105 then
+            if v105:FindFirstChild("FlyVelocity") then
+                v105.FlyVelocity:Destroy()
+            end
+            if v105:FindFirstChild("FlyGyro") then
+                v105.FlyGyro:Destroy()
+            end
+        end
+        if v106 then
+            v106:ChangeState(Enum.HumanoidStateType.GettingUp)
+        end
+        if vu96 then
+            vu96:Disconnect()
+            vu96 = nil
+        end
+    end
+end
+vu27.MouseButton1Click:Connect(function()
+    vu95 = not vu95
+    vu27.Text = vu95 and "Fly ON" or "Fly OFF"
+    if vu95 then
+        vu103()
+    else
+        vu107()
+    end
+end)
+vu4.CharacterAdded:Connect(function()
+    task.wait(1)
+    if vu13:FindFirstChild("CamLockUI") then
+        vu80()
+    end
+end)
+local vu108 = false
+local vu109 = 16
+local vu110 = nil
+local vu111 = Instance.new("TextButton")
+vu111.Size = UDim2.new(0, 80, 0, 40)
+vu111.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+vu111.TextColor3 = Color3.fromRGB(0, 255, 0)
+vu111.Text = "Speed OFF"
+vu111.Font = Enum.Font.GothamBold
+vu111.TextScaled = true
+vu111.Parent = vu15
+vu111.BorderSizePixel = 0
+vu111.AutoButtonColor = false
+Instance.new("UICorner", vu111).CornerRadius = UDim.new(0, 10)
+local vu112 = Instance.new("TextBox")
+vu112.Size = UDim2.new(0, 80, 0, 40)
+vu112.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+vu112.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu112.PlaceholderText = "Enter a Value"
+vu112.Font = Enum.Font.Gotham
+vu112.TextScaled = true
+vu112.ClearTextOnFocus = false
+vu112.Text = tostring(vu109)
+vu112.Parent = vu15
+vu112.BorderSizePixel = 0
+Instance.new("UICorner", vu112).CornerRadius = UDim.new(0, 8)
+local function vu116(p113)
+    local v114 = vu4.Character
+    if v114 then
+        local v115 = v114:FindFirstChildOfClass("Humanoid")
+        if v115 then
+            v115.WalkSpeed = p113
+        end
+    end
+end
+local function vu117()
+    if vu110 then
+        vu110:Disconnect()
+    end
+    vu110 = vu2.RenderStepped:Connect(function()
+        vu116(vu109)
+    end)
+end
+local function vu118()
+    if vu110 then
+        vu110:Disconnect()
+        vu110 = nil
+    end
+    vu116(16)
+end
+vu111.MouseButton1Click:Connect(function()
+    vu108 = not vu108
+    if vu108 then
+        local v119 = tonumber(vu112.Text)
+        if not v119 or v119 <= 0 then
+            vu112.Text = "16"
+            v119 = 16
+        end
+        vu109 = v119
+        vu111.Text = "Speed ON"
+        vu117()
+    else
+        vu111.Text = "Speed OFF"
+        vu118()
+    end
+end)
+local v120 = vu112
+vu112.GetPropertyChangedSignal(v120, "Text"):Connect(function()
+    if vu108 then
+        local v121 = tonumber(vu112.Text)
+        if v121 and 0 < v121 then
+            vu109 = v121
+        else
+            vu109 = 16
+        end
+    end
+end)
+local vu122 = false
+local vu123 = 50
+local vu124 = nil
+local vu125 = Instance.new("TextButton")
+vu125.Size = UDim2.new(0, 120, 0, 40)
+vu125.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+vu125.TextColor3 = Color3.fromRGB(0, 255, 0)
+vu125.Text = "Auto TP OFF"
+vu125.Font = Enum.Font.GothamBold
+vu125.TextScaled = true
+vu125.Parent = vu15
+vu125.BorderSizePixel = 0
+vu125.AutoButtonColor = false
+Instance.new("UICorner", vu125).CornerRadius = UDim.new(0, 10)
+local vu126 = Instance.new("TextBox")
+vu126.Size = UDim2.new(0, 80, 0, 40)
+vu126.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+vu126.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu126.PlaceholderText = "HP Threshold"
+vu126.Font = Enum.Font.Gotham
+vu126.TextScaled = true
+vu126.ClearTextOnFocus = false
+vu126.Text = tostring(vu123)
+vu126.Parent = vu15
+vu126.BorderSizePixel = 0
+Instance.new("UICorner", vu126).CornerRadius = UDim.new(0, 8)
+local function vu128()
+    local v127 = vu4.Character
+    if v127 and v127:FindFirstChild("HumanoidRootPart") then
+        v127.HumanoidRootPart.CFrame = CFrame.new(v127.HumanoidRootPart.Position.X, 10000, v127.HumanoidRootPart.Position.Z)
+    end
+end
+local function vu131()
+    local v129 = vu4.Character
+    if v129 and v129:FindFirstChild("HumanoidRootPart") then
+        local v130 = v129.HumanoidRootPart
+        v130.CFrame = CFrame.new(v130.Position.X, workspace.FallenPartsDestroyHeight + 10, v130.Position.Z)
+    end
+end
+local function vu134()
+    if vu124 then
+        vu124:Disconnect()
+    end
+    vu124 = vu2.RenderStepped:Connect(function()
+        local v132 = vu4.Character
+        if v132 then
+            local v133 = v132:FindFirstChildOfClass("Humanoid")
+            if v133 then
+                if v133.Health > vu123 then
+                    if v133.Health >= v133.MaxHealth * 0.9 then
+                        vu131()
+                    end
+                else
+                    vu128()
+                end
+            end
+        end
+    end)
+end
+local function vu135()
+    if vu124 then
+        vu124:Disconnect()
+        vu124 = nil
+    end
+end
+vu125.MouseButton1Click:Connect(function()
+    vu122 = not vu122
+    if vu122 then
+        local v136 = tonumber(vu126.Text)
+        if not v136 or v136 <= 0 then
+            vu126.Text = "50"
+            v136 = 50
+        end
+        vu123 = v136
+        vu125.Text = "Auto TP ON"
+        vu134()
+    else
+        vu125.Text = "Auto TP OFF"
+        vu135()
+    end
+end)
+local v137 = vu126
+vu126.GetPropertyChangedSignal(v137, "Text"):Connect(function()
+    local v138 = tonumber(vu126.Text)
+    if v138 and 0 < v138 then
+        vu123 = v138
+    else
+        vu123 = 50
+    end
+end)
+local vu139 = false
+local vu140 = nil
+local vu141 = nil
+local vu142 = game:GetService("Players")
+local vu143 = vu142.LocalPlayer
+local _ = game:GetService("Workspace").CurrentCamera
+local v144 = vu143
+local v145 = vu143.GetMouse(v144)
+getgenv().setting = {
+    LockPlayers = false,
+    LockPlayersBind = Enum.KeyCode.L,
+    resetPlayersBind = Enum.KeyCode.P
+}
+local function vu154()
+    local v146 = math.huge
+    local v147 = vu142
+    local v148, v149, v150 = pairs(v147:GetPlayers())
+    local v151 = nil
+    while true do
+        local v152
+        v150, v152 = v148(v149, v150)
+        if v150 == nil then
+            break
+        end
+        if v152 ~= vu143 and v152.Character and (v152.Character:FindFirstChild("HumanoidRootPart") and (v152.Character:FindFirstChild("Humanoid") and (v152.Character.Humanoid.Health > 0 and (not vu143.Team or (not v152.Team or (vu143.Team.Name ~= "Marines" or v152.Team.Name ~= "Marines")))))) then
+            local v153 = (vu143.Character.HumanoidRootPart.Position - v152.Character.HumanoidRootPart.Position).Magnitude
+            if v153 < v146 then
+                v151 = v152
+                v146 = v153
+            end
+        end
+    end
+    return v151
+end
+task.spawn(function()
+    while task.wait(0.2) do
+        if vu139 and not getgenv().setting.LockPlayers then
+            local v155 = vu154()
+            if v155 then
+                vu140 = v155.Name
+                vu141 = v155.Character.HumanoidRootPart.Position
+            end
+        elseif not vu139 then
+            vu140 = nil
+            vu141 = nil
+        end
+    end
+end)
+game:GetService("UserInputService").InputBegan:Connect(function(p156, _)
+    if p156.KeyCode ~= getgenv().setting.LockPlayersBind then
+        if p156.KeyCode == getgenv().setting.resetPlayersBind then
+            vu140 = nil
+            vu141 = nil
+            print("Players Reset")
+        end
+    elseif vu139 then
+        getgenv().setting.LockPlayers = not getgenv().setting.LockPlayers
+        print("Lock Players:", getgenv().setting.LockPlayers)
+    end
+end)
+task.spawn(function()
+    local v157 = getrawmetatable(game)
+    local vu158 = v157.__namecall
+    setreadonly(v157, false)
+    v157.__namecall = newcclosure(function(...)
+        local v159 = getnamecallmethod()
+        local v160 = {
+            ...
+        }
+        if not vu139 or (tostring(v159) ~= "FireServer" or (tostring(v160[1]) ~= "RemoteEvent" or (tostring(v160[2]) == "true" or (tostring(v160[2]) == "false" or not (vu140 and vu141))))) then
+            return vu158(...)
+        end
+        v160[2] = vu141
+        return vu158(unpack(v160))
+    end)
+end)
+v145.Button1Down:Connect(function()
+    if vu139 then
+        pcall(function()
+            if vu140 and vu141 then
+                local v161 = vu142:FindFirstChild(vu140)
+                if v161 and v161.Character and v161.Character:FindFirstChild("HumanoidRootPart") then
+                    local v162 = vu143.Character:FindFirstChildOfClass("Tool")
+                    if v162 and v162:FindFirstChild("RemoteFunctionShoot") then
+                        local v163 = {
+                            vu141,
+                            v161.Character.HumanoidRootPart
+                        }
+                        v162.RemoteFunctionShoot:InvokeServer(unpack(v163))
+                    end
+                end
+            end
+        end)
+    end
+end)
+vu28.MouseButton1Click:Connect(function()
+    vu139 = not vu139
+    vu28.Text = vu139 and "Aimbot skills ON" or "Aimbot skills OFF"
+    print("Silent Aim:", vu139)
+end)
+_G.FastAttack = false
+local function v168(pu164, pu165)
+    local v166, v167 = pcall(function()
+        return pu164:WaitForChild(pu165)
+    end)
+    return v166 and v167 and v167 or nil
+end
+local v169 = game:GetService("ReplicatedStorage")
+game:GetService("RunService")
+local vu170 = game:GetService("Players").LocalPlayer
+local v171 = v168(v169, "Remotes")
+if v171 then
+    v168(v171, "CommF_")
+    local vu172 = v168(workspace, "Enemies")
+    local vu173 = v168(workspace, "Characters")
+    local v174 = v168(v168(v169, "Modules"), "Net")
+    local vu175 = {
+        AutoClick = true,
+        ClickDelay = 0
+    }
+    local vu176 = {
+        Distance = 100
+    }
+    local vu177 = v168(v174, "RE/RegisterAttack")
+    local vu178 = v168(v174, "RE/RegisterHit")
+    local function vu181(p179)
+        local v180 = p179 and p179:FindFirstChild("Humanoid")
+        if v180 then
+            v180 = p179.Humanoid.Health > 0
+        end
+        return v180
+    end
+    local function vu190(p182, p183)
+        local v184, v185, v186 = p183:GetChildren()
+        local v187 = nil
+        while true do
+            local v188
+            v186, v188 = v184(v185, v186)
+            if v186 == nil then
+                break
+            end
+            local v189 = v188:FindFirstChild("Head")
+            if v189 and vu181(v188) and (vu170:DistanceFromCharacter(v189.Position) < vu176.Distance and v188 ~= vu170.Character) then
+                table.insert(p182, {
+                    v188,
+                    v189
+                })
+                v187 = v189
+            end
+        end
+        return v187
+    end
+    function vu176.Attack(_, p191, p192)
+        if p191 and # p192 ~= 0 then
+            vu177:FireServer(vu175.ClickDelay or 0)
+            vu178:FireServer(p191, p192)
+        end
+    end
+    function vu176.AttackNearest(p193)
+        local v194 = {}
+        local v195 = vu190(v194, vu172)
+        local v196 = vu190(v194, vu173)
+        if # v194 > 0 then
+            p193:Attack(v195 or v196, v194)
+        end
+    end
+    function vu176.BladeHits(p197)
+        local v198 = vu181(vu170.Character)
+        if v198 then
+            v198 = vu170.Character:FindFirstChildOfClass("Tool")
+        end
+        if v198 and v198.ToolTip ~= "Gun" then
+            p197:AttackNearest()
+        end
+    end
+    task.spawn(function()
+        while task.wait(vu175.ClickDelay) do
+            if vu175.AutoClick and _G.FastAttack then
+                vu176:BladeHits()
+            end
+        end
+    end)
+    local vu199 = game:GetService("Players").LocalPlayer
+    _G.InfEnergy = false
+    local vu200 = 1000
+    local function v202()
+        while task.wait(0.2) do
+            if _G.InfEnergy then
+                local v201 = vu199.Character
+                if v201 and v201:FindFirstChild("Energy") then
+                    if not vu200 or vu200 <= 0 then
+                        vu200 = v201.Energy.Value
+                    end
+                    v201.Energy.Value = vu200
+                end
+            end
+        end
+    end
+    task.spawn(v202)
+    vu199.CharacterAdded:Connect(function(p203)
+        task.wait(1)
+        local v204 = p203:FindFirstChild("Energy")
+        if v204 then
+            vu200 = v204.Value
+        end
+    end)
+    local vu205 = game:GetService("Players")
+    local vu206 = vu205.LocalPlayer
+    local vu207 = vu206.Team
+    local function vu209(p208)
+        return math.floor(tonumber(p208) + 0.5)
+    end
+    local vu210 = math.random(1, 1000000)
+    _G.PlayerEsp = false
+    local function vu218()
+        local v211 = vu205
+        local v212, v213, v214 = ipairs(v211:GetPlayers())
+        while true do
+            local vu215
+            v214, vu215 = v212(v213, v214)
+            if v214 == nil then
+                break
+            end
+            pcall(function()
+                if vu215 ~= vu206 and vu215.Character and vu215.Character:FindFirstChild("Head") then
+                    if _G.PlayerEsp then
+                        if vu215.Character.Head:FindFirstChild("NameEsp" .. vu210) then
+                            vu215.Character.Head["NameEsp" .. vu210].TextLabel.Text = (vu215:FindFirstChild("Data") and (vu215.Data:FindFirstChild("Level") and vu215.Data.Level.Value or "?") or "?") .. " | " .. vu215.Name .. " | " .. vu209((vu206.Character.Head.Position - vu215.Character.Head.Position).Magnitude / 3) .. " M" .. "\nHealth : " .. vu209(vu215.Character.Humanoid.Health * 100 / vu215.Character.Humanoid.MaxHealth) .. "%"
+                        else
+                            local v216 = Instance.new("BillboardGui", vu215.Character.Head)
+                            v216.Name = "NameEsp" .. vu210
+                            v216.ExtentsOffset = Vector3.new(0, 2, 0)
+                            v216.Size = UDim2.new(0, 200, 0, 50)
+                            v216.Adornee = vu215.Character.Head
+                            v216.AlwaysOnTop = true
+                            local v217 = Instance.new("TextLabel", v216)
+                            v217.Font = Enum.Font.Code
+                            v217.TextWrapped = true
+                            v217.Size = UDim2.new(1, 0, 1, 0)
+                            v217.TextYAlignment = Enum.TextYAlignment.Top
+                            v217.BackgroundTransparency = 1
+                            v217.TextStrokeTransparency = 0.5
+                            v217.TextScaled = true
+                            if vu215.Team ~= vu207 then
+                                v217.TextColor3 = Color3.fromRGB(255, 0, 0)
+                            else
+                                v217.TextColor3 = Color3.fromRGB(0, 0, 255)
+                            end
+                        end
+                    elseif vu215.Character.Head:FindFirstChild("NameEsp" .. vu210) then
+                        vu215.Character.Head:FindFirstChild("NameEsp" .. vu210):Destroy()
+                    end
+                end
+            end)
+        end
+    end
+    task.spawn(function()
+        while task.wait(0.5) do
+            vu218()
+        end
+    end)
+    _G.WalkOnWater = false
+    local vu219 = game:GetService("Workspace").Map:FindFirstChild("WaterBase-Plane")
+    if vu219 then
+        local vu220 = vu219.Size
+        task.spawn(function()
+            while task.wait(0.5) do
+                if _G.WalkOnWater then
+                    pcall(function()
+                        vu219.Size = Vector3.new(1000, 112, 1000)
+                    end)
+                else
+                    pcall(function()
+                        vu219.Size = vu220
+                    end)
+                end
+            end
+        end)
+        local vu221 = game:GetService("ReplicatedStorage")
+        _G.AutoRaceV3 = false
+        task.spawn(function()
+            while task.wait(0.2) do
+                pcall(function()
+                    if _G.AutoRaceV3 and vu221:FindFirstChild("Remotes") then
+                        vu221.Remotes.CommE:FireServer("ActivateAbility")
+                        task.wait(30)
+                    end
+                end)
+            end
+        end)
+        local vu222 = game:GetService("Players").LocalPlayer
+        _G.AutoRaceV4 = false
+        local function vu223()
+            game:GetService("VirtualInputManager"):SendKeyEvent(true, "Y", false, game)
+            task.wait(0.1)
+            game:GetService("VirtualInputManager"):SendKeyEvent(false, "Y", false, game)
+        end
+        task.spawn(function()
+            while task.wait(0.2) do
+                pcall(function()
+                    if _G.AutoRaceV4 and vu222.Character and (vu222.Character:FindFirstChild("RaceEnergy") and vu222.Character.RaceEnergy.Value == 1) then
+                        vu223()
+                    end
+                end)
+            end
+        end)
+    else
+        warn("[\226\154\160] Couldn\'t find WaterBase-Plane.")
+    end
+else
+    return
+end
